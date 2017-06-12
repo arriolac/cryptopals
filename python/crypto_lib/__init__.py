@@ -32,3 +32,8 @@ def string_score(s):
         if c.isalpha() or c == ' ':
             score += 1
     return score
+
+def repeating_key_xor(key, text):
+    repeated_key = key * int((len(text) / len(key)) + 1)
+    return ''.join(hex(ord(i) ^ ord(j)) for i, j in zip(text, repeated_key))
+
