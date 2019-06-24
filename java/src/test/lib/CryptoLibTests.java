@@ -25,4 +25,13 @@ public class CryptoLibTests {
         final String result = CryptoLib.fixedXOR(input1, input2);
         assertEquals("746865206b696420646f6e277420706c6179", result);
     }
+
+    // Problem # 3
+    @Test
+    public void testSingleByteXorCipher() {
+        final String input = "1b37373331363f78151b7f2b783431333d78397828372d363c78373e783a393b3736";
+        final char result = CryptoLib.singleByteXorCipher(input);
+        assertEquals('X', result);
+
+    }
 }

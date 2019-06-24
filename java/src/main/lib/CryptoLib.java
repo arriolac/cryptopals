@@ -1,18 +1,15 @@
 package main.lib;
 
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import javax.sound.midi.Sequence;
-import java.util.Arrays;
 import java.util.Base64;
-import java.util.IntSummaryStatistics;
-import java.util.stream.IntStream;
 
 public class CryptoLib {
 
     /**
      * Converts a string of hex values into a base64 string.
-     *
+     * <p>
      * Problem #1
      *
      * @param hexString the hex string
@@ -26,6 +23,13 @@ public class CryptoLib {
         return Base64.getEncoder().encodeToString(bytes);
     }
 
+    /**
+     * Returns a string as a result of performing a bitwise XOR operation between {@code lhs} and {@code rhs}.
+     *
+     * @param lhs the 1st string
+     * @param rhs the 2nd string
+     * @return the XOR'd string
+     */
     public static String fixedXOR(@Nullable String lhs, @Nullable String rhs) {
         if (lhs == null || rhs == null) {
             return null;
@@ -46,6 +50,38 @@ public class CryptoLib {
                     .append(Character.forDigit(secondDigit, 16));
         }
         return stringBuilder.toString();
+    }
+
+    /**
+     * Returns the single byte XOR cipher for the given string.
+     * @param input the input string
+     * @return the cipher
+     */
+    public static char singleByteXorCipher(@NotNull String input) {
+        int currentMax = Integer.MIN_VALUE;
+        char match = 0;
+        for (int i = 0; i < 256; i++) {
+            final String hexValue = Integer.toHexString(i);
+            final String candidate = hexValue.repeat(input.length() / hexValue.length());
+            final String fixedXOR = CryptoLib.fixedXOR(input, candidate);
+            final byte[] resultBytes = CryptoLib.decodeHexString(fixedXOR);
+            final String decoded = new String(resultBytes);
+            final int charCount = countAlpha(decoded);
+            if (countAlpha(decoded) > currentMax) {
+                match = (char) i;
+                currentMax = charCount;
+            }
+        }
+        return match;
+    }
+
+    private static int countAlpha(String input) {
+        int count = 0;
+        for (int i = 0; i < input.length(); i++) {
+            final char currentChar = input.charAt(i);
+            count += Character.isAlphabetic(currentChar) ? 1 : 0;
+        }
+        return count;
     }
 
     private static byte[] decodeHexString(String hexString) {
