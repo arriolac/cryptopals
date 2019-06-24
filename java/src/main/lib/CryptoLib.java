@@ -36,7 +36,7 @@ public class CryptoLib {
         }
 
         if (lhs.length() != rhs.length()) {
-            throw new IllegalArgumentException("Lengths do not match");
+            throw new IllegalArgumentException("Lengths do not match " + lhs.length() + ", " + rhs.length());
         }
 
         final byte[] lhsBytes = decodeHexString(lhs);
@@ -57,25 +57,40 @@ public class CryptoLib {
      * @param input the input string
      * @return the cipher
      */
-    public static char singleByteXorCipher(@NotNull String input) {
+    public static char findSingleByteXorCipher(@NotNull String input) {
         int currentMax = Integer.MIN_VALUE;
         char match = 0;
-        for (int i = 0; i < 256; i++) {
-            final String hexValue = Integer.toHexString(i);
-            final String candidate = hexValue.repeat(input.length() / hexValue.length());
-            final String fixedXOR = CryptoLib.fixedXOR(input, candidate);
+        for (char c = 0; c < 256; c++) {
+            final String fixedXOR = applySingleByteXorCipher(input, c);
             final byte[] resultBytes = CryptoLib.decodeHexString(fixedXOR);
             final String decoded = new String(resultBytes);
             final int charCount = countAlpha(decoded);
             if (countAlpha(decoded) > currentMax) {
-                match = (char) i;
+                match = c;
                 currentMax = charCount;
             }
         }
         return match;
     }
 
-    private static int countAlpha(String input) {
+    /**
+     * Applies the xor operation to {@code input} using the single byte cipher {@code cipher}.
+     * @param input the input string
+     * @param cipher the cipher to apply
+     * @return the result, hex encoded
+     */
+    public static String applySingleByteXorCipher(@NotNull String input, char cipher) {
+        final String cipherInHex = Integer.toHexString(cipher);
+        final String repeatedCipher = cipherInHex.repeat(input.length() / cipherInHex.length());
+        return CryptoLib.fixedXOR(input, repeatedCipher);
+    }
+
+    /**
+     * Counts the number of alphabets in {@code input}.
+     * @param input the input string
+     * @return the number of alphabets
+     */
+    public static int countAlpha(String input) {
         int count = 0;
         for (int i = 0; i < input.length(); i++) {
             final char currentChar = input.charAt(i);
@@ -84,7 +99,7 @@ public class CryptoLib {
         return count;
     }
 
-    private static byte[] decodeHexString(String hexString) {
+    public static byte[] decodeHexString(String hexString) {
         final int hexStringLength = hexString.length();
         if (hexStringLength % 2 != 0) {
             throw new IllegalArgumentException("Hex string not of even length.");

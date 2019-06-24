@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2aca799d-bc84-495e-8c2c-1ce702f3ab4c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/cryptopals/main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/cryptopals/main/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/cryptopals/main/lib/CryptoLib.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/cryptopals/main/lib/CryptoLib.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/lib/CryptoLib.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/lib/CryptoLib.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/lib/CryptoLibTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/lib/CryptoLibTests.java" afterDir="false" />
@@ -59,23 +56,28 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="iml" value="1" />
-          <entry key="java" value="18" />
+          <entry key="java" value="27" />
+          <entry key="txt" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="IDEA_MODULE" value="1" />
-          <entry key="JAVA" value="18" />
+          <entry key="JAVA" value="27" />
+          <entry key="PLAIN_TEXT" value="2" />
+          <entry key="Scratch" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="4725" />
+          <entry key="java" value="7506" />
+          <entry key="txt" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="4725" />
+          <entry key="JAVA" value="7506" />
+          <entry key="PLAIN_TEXT" value="1" />
         </counts>
       </usages-collector>
     </session>
@@ -85,29 +87,21 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" selection-start-line="7" selection-end-line="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/lib/CryptoLib.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="73" column="8" selection-start-line="73" selection-start-column="8" selection-end-line="73" selection-end-column="8" />
+            <state>
+              <caret column="12" selection-start-column="12" selection-end-column="12" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#210#211#0" expanded="true" />
+                <element signature="e#244#245#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/lib/CryptoLibTests.java">
+        <entry file="file://$PROJECT_DIR$/src/main/sets/Set1.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="32" column="17" selection-start-line="32" selection-start-column="17" selection-end-line="32" selection-end-column="17" />
+            <state relative-caret-position="197">
+              <caret line="21" column="33" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -130,9 +124,11 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/lib/CryptoLib.java" />
+        <option value="$PROJECT_DIR$/src/test/files/set1_problem4_input.txt" />
         <option value="$PROJECT_DIR$/src/main/Main.java" />
+        <option value="$PROJECT_DIR$/src/main/lib/CryptoLib.java" />
         <option value="$PROJECT_DIR$/src/test/lib/CryptoLibTests.java" />
+        <option value="$PROJECT_DIR$/src/main/sets/Set1.java" />
       </list>
     </option>
   </component>
@@ -141,23 +137,66 @@
     <option name="width" value="1440" />
     <option name="height" value="877" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes />
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="java" type="b2602c69:ProjectViewProjectNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="java" type="b2602c69:ProjectViewProjectNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="java" type="b2602c69:ProjectViewProjectNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="java" type="b2602c69:ProjectViewProjectNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="sets" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="AndroidView" />
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+    </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
-    <property name="SearchEverywhereHistoryKey" value="CryptoLib&#9;FILE&#9;file:///Users/chrisarriola/workspace/cryptopals/java/src/test/lib/CryptoLibTests.java&#10;Main.j&#9;FILE&#9;file:///Users/chrisarriola/workspace/cryptopals/java/src/main/Main.java&#10;Crypto&#9;FILE&#9;file:///Users/chrisarriola/workspace/cryptopals/java/src/main/lib/CryptoLib.java&#10;cryptoLib&#9;FILE&#9;file:///Users/chrisarriola/workspace/cryptopals/java/src/test/lib/CryptoLibTests.java&#10;Test&#9;FILE&#9;file:///Users/chrisarriola/workspace/cryptopals/src/test/lib/CryptoLibTests.java" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1561337929981" />
+    <property name="SearchEverywhereHistoryKey" value="Cr&#9;FILE&#9;file:///Users/chrisarriola/workspace/cryptopals/java/src/test/lib/CryptoLibTests.java&#10;Cryp&#9;FILE&#9;file:///Users/chrisarriola/workspace/cryptopals/java/src/test/lib/CryptoLibTests.java&#10;CryptoLIb&#9;FILE&#9;file:///Users/chrisarriola/workspace/cryptopals/java/src/test/lib/CryptoLibTests.java&#10;CryptoLib&#9;FILE&#9;file:///Users/chrisarriola/workspace/cryptopals/java/src/test/lib/CryptoLibTests.java&#10;Main.j&#9;FILE&#9;file:///Users/chrisarriola/workspace/cryptopals/java/src/main/Main.java&#10;Crypto&#9;FILE&#9;file:///Users/chrisarriola/workspace/cryptopals/java/src/main/lib/CryptoLib.java&#10;cryptoLib&#9;FILE&#9;file:///Users/chrisarriola/workspace/cryptopals/java/src/test/lib/CryptoLibTests.java&#10;Test&#9;FILE&#9;file:///Users/chrisarriola/workspace/cryptopals/src/test/lib/CryptoLibTests.java" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1561340774637" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="TEXT" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/files" />
+      <recent name="$PROJECT_DIR$/src/main" />
+      <recent name="$PROJECT_DIR$/src/main/files" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -171,7 +210,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.CryptoLibTests">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="main.Main" />
       <module name="cryptopals" />
@@ -212,15 +251,33 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="CryptoLibTests.testSingleByteXorCipher" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="cryptopals" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.lib.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test.lib" />
+      <option name="MAIN_CLASS_NAME" value="test.lib.CryptoLibTests" />
+      <option name="METHOD_NAME" value="testSingleByteXorCipher" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="Application.Main" />
       <item itemvalue="JUnit.CryptoLibTests" />
       <item itemvalue="JUnit.CryptoLibTests.testConvertHexToBase64" />
+      <item itemvalue="JUnit.CryptoLibTests.testSingleByteXorCipher" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.CryptoLibTests" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.CryptoLibTests.testSingleByteXorCipher" />
+        <item itemvalue="JUnit.CryptoLibTests" />
         <item itemvalue="JUnit.CryptoLibTests.testConvertHexToBase64" />
       </list>
     </recent_temporary>
@@ -239,27 +296,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="CryptoLibTests - 2019.06.15 at 19h 23m 47s.xml">
-      <configuration name="CryptoLibTests" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="CryptoLibTests - 2019.06.16 at 10h 14m 01s.xml">
-      <configuration name="CryptoLibTests" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="CryptoLibTests - 2019.06.16 at 10h 14m 37s.xml">
-      <configuration name="CryptoLibTests" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="CryptoLibTests - 2019.06.16 at 10h 17m 37s.xml">
-      <configuration name="CryptoLibTests" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="CryptoLibTests_testConvertHexToBase64 - 2019.06.16 at 10h 19m 07s.xml">
-      <configuration name="CryptoLibTests.testConvertHexToBase64" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="CryptoLibTests_testConvertHexToBase64 - 2019.06.16 at 10h 19m 46s.xml">
-      <configuration name="CryptoLibTests.testConvertHexToBase64" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="CryptoLibTests - 2019.06.16 at 10h 24m 53s.xml">
-      <configuration name="CryptoLibTests" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="CryptoLibTests - 2019.06.16 at 11h 38m 51s.xml">
       <configuration name="CryptoLibTests" configurationId="JUnit" />
     </history-entry>
@@ -269,12 +305,33 @@
     <history-entry file="CryptoLibTests - 2019.06.16 at 11h 40m 16s.xml">
       <configuration name="CryptoLibTests" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="CryptoLibTests - 2019.06.24 at 09h 58m 52s.xml">
+      <configuration name="CryptoLibTests" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CryptoLibTests_testSingleByteXorCipher - 2019.06.24 at 10h 38m 49s.xml">
+      <configuration name="CryptoLibTests.testSingleByteXorCipher" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CryptoLibTests_testSingleByteXorCipher - 2019.06.24 at 10h 39m 39s.xml">
+      <configuration name="CryptoLibTests.testSingleByteXorCipher" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CryptoLibTests_testSingleByteXorCipher - 2019.06.24 at 10h 39m 52s.xml">
+      <configuration name="CryptoLibTests.testSingleByteXorCipher" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CryptoLibTests_testSingleByteXorCipher - 2019.06.24 at 10h 40m 07s.xml">
+      <configuration name="CryptoLibTests.testSingleByteXorCipher" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CryptoLibTests_testSingleByteXorCipher - 2019.06.24 at 10h 41m 27s.xml">
+      <configuration name="CryptoLibTests.testSingleByteXorCipher" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CryptoLibTests_testSingleByteXorCipher - 2019.06.24 at 10h 42m 07s.xml">
+      <configuration name="CryptoLibTests.testSingleByteXorCipher" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="877" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.27029288" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.19957082" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -283,7 +340,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.37579617" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.5146497" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -302,7 +359,7 @@
       <window_info anchor="right" id="Maven Projects" order="7" />
     </layout>
     <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.27029288" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.19957082" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -311,7 +368,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.37579617" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.5146497" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -362,13 +419,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/openjdk-11.0.1.jdk/Contents/Home/lib/src.zip!/java.base/java/util/Collection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
-          <caret line="709" column="22" selection-start-line="709" selection-start-column="22" selection-end-line="709" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/openjdk-11.0.1.jdk/Contents/Home/lib/src.zip!/java.base/java/nio/ByteBuffer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="244">
@@ -383,13 +433,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/openjdk-11.0.1.jdk/Contents/Home/lib/src.zip!/java.base/java/lang/String.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="972" column="31" selection-start-line="972" selection-start-column="31" selection-end-line="972" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/cryptopals.iml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -397,13 +440,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1110">
           <caret line="116" column="18" selection-start-line="116" selection-start-column="18" selection-end-line="116" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/openjdk-11.0.1.jdk/Contents/Home/lib/src.zip!/java.base/java/lang/Character.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="490">
-          <caret line="10349" column="43" lean-forward="true" selection-start-line="10349" selection-start-column="43" selection-end-line="10349" selection-end-column="43" />
         </state>
       </provider>
     </entry>
@@ -418,17 +454,71 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Main.java">
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/openjdk-11.0.1.jdk/Contents/Home/lib/src.zip!/java.base/java/lang/Character.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
+        <state relative-caret-position="415">
+          <caret line="162" column="49" lean-forward="true" selection-start-line="162" selection-start-column="49" selection-end-line="162" selection-end-column="49" />
+          <folding>
+            <element signature="e#392381#392382#0" expanded="true" />
+            <element signature="e#392425#392426#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/openjdk-11.0.1.jdk/Contents/Home/lib/src.zip!/java.base/java/nio/file/Path.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="672">
+          <caret line="145" column="23" selection-start-line="145" selection-start-column="23" selection-end-line="145" selection-end-column="23" />
+          <folding>
+            <element signature="e#7225#7226#0" expanded="true" />
+            <element signature="e#7293#7294#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/openjdk-11.0.1.jdk/Contents/Home/lib/src.zip!/java.base/java/nio/file/Files.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="507">
+          <caret line="3365" column="46" selection-start-line="3365" selection-start-column="46" selection-end-line="3365" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/openjdk-11.0.1.jdk/Contents/Home/lib/src.zip!/java.base/java/lang/String.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="179">
+          <caret line="124" column="19" selection-start-line="124" selection-start-column="19" selection-end-line="124" selection-end-column="19" />
+          <folding>
+            <element signature="e#38751#38752#0" expanded="true" />
+            <element signature="e#38809#38810#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/openjdk-11.0.1.jdk/Contents/Home/lib/src.zip!/java.base/java/util/Collection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="610">
+          <caret line="730" column="22" selection-start-line="730" selection-start-column="22" selection-end-line="730" selection-end-column="22" />
+          <folding>
+            <element signature="e#36492#36493#0" expanded="true" />
+            <element signature="e#36556#36557#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/sets/test_files/set1_problem4_input.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="670">
+          <caret line="326" column="59" selection-start-line="326" selection-start-column="59" selection-end-line="326" selection-end-column="59" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/lib/CryptoLib.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="73" column="8" selection-start-line="73" selection-start-column="8" selection-end-line="73" selection-end-column="8" />
+        <state relative-caret-position="66">
+          <caret line="60" selection-start-line="60" selection-end-line="60" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -437,8 +527,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/lib/CryptoLibTests.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="32" column="17" selection-start-line="32" selection-start-column="17" selection-end-line="32" selection-end-column="17" />
+        <state relative-caret-position="214">
+          <caret line="34" selection-start-line="34" selection-end-line="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="12" selection-start-column="12" selection-end-column="12" />
+          <folding>
+            <element signature="e#210#211#0" expanded="true" />
+            <element signature="e#244#245#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/sets/Set1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="21" column="33" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
