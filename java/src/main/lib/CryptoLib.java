@@ -24,36 +24,43 @@ public class CryptoLib {
     }
 
     /**
-     * Returns a string as a result of performing a bitwise XOR operation between {@code lhs} and {@code rhs}.
+     * Returns a string as a result of performing a bitwise XOR operation between the hex strings {@code lhs} and
+     * {@code rhs}.
      *
-     * @param lhs the 1st string
-     * @param rhs the 2nd string
-     * @return the XOR'd string
+     * @param hex1 the 1st hex string
+     * @param hex2 the 2nd hex string
+     * @return the XOR'd string in hex
      */
-    public static String fixedXOR(@Nullable String lhs, @Nullable String rhs) {
-        if (lhs == null || rhs == null) {
+    public static String fixedXOR(@Nullable String hex1, @Nullable String hex2) {
+        if (hex1 == null || hex2 == null) {
             return null;
         }
 
-        if (lhs.length() != rhs.length()) {
-            throw new IllegalArgumentException("Lengths do not match " + lhs.length() + ", " + rhs.length());
-        }
+        final byte[] lhsBytes = decodeHexString(hex1);
+        final byte[] rhsBytes = decodeHexString(hex2);
+        final byte[] xorBytes = fixedXOR(lhsBytes, rhsBytes);
+        return decodeToHexString(xorBytes);
+    }
 
-        final byte[] lhsBytes = decodeHexString(lhs);
-        final byte[] rhsBytes = decodeHexString(rhs);
-        final StringBuilder stringBuilder = new StringBuilder();
-        for (int i = 0; i < lhsBytes.length; i++) {
-            final byte xoredByte = (byte) (lhsBytes[i] ^ rhsBytes[i]);
-            final int firstDigit = (xoredByte & 0xF0) >> 4;
-            final int secondDigit = xoredByte & 0x0F;
-            stringBuilder.append(Character.forDigit(firstDigit, 16))
-                    .append(Character.forDigit(secondDigit, 16));
+    /**
+     * Applies the XOR bitwise operation to the provided 2 byte arrays
+     *
+     * @return the result of the bitwise operation
+     */
+    public static byte[] fixedXOR(byte[] lhs, byte[] rhs) {
+        if (lhs.length != rhs.length) {
+            throw new IllegalArgumentException("Byte array sizes don't match.");
         }
-        return stringBuilder.toString();
+        final byte[] fixedXor = new byte[lhs.length];
+        for (int i = 0; i < lhs.length; i++) {
+            fixedXor[i] = (byte) (lhs[i] ^ rhs[i]);
+        }
+        return fixedXor;
     }
 
     /**
      * Returns the single byte XOR cipher for the given string.
+     *
      * @param input the input string
      * @return the cipher
      */
@@ -61,7 +68,7 @@ public class CryptoLib {
         int currentMax = Integer.MIN_VALUE;
         char match = 0;
         for (char c = 0; c < 256; c++) {
-            final String fixedXOR = applySingleByteXorCipher(input, c);
+            final String fixedXOR = repeatingKeyXor(input, c);
             final byte[] resultBytes = CryptoLib.decodeHexString(fixedXOR);
             final String decoded = new String(resultBytes);
             final int charCount = countAlpha(decoded);
@@ -74,19 +81,43 @@ public class CryptoLib {
     }
 
     /**
-     * Applies the xor operation to {@code input} using the single byte cipher {@code cipher}.
-     * @param input the input string
+     * Applies the repeating key xor operation to the hex string {@code input} using the single byte
+     * cipher {@code cipher}.
+     *
+     * @param hexInput  the input string
      * @param cipher the cipher to apply
      * @return the result, hex encoded
      */
-    public static String applySingleByteXorCipher(@NotNull String input, char cipher) {
+    public static String repeatingKeyXor(@NotNull String hexInput, char cipher) {
         final String cipherInHex = Integer.toHexString(cipher);
-        final String repeatedCipher = cipherInHex.repeat(input.length() / cipherInHex.length());
-        return CryptoLib.fixedXOR(input, repeatedCipher);
+        final String repeatedCipher = cipherInHex.repeat(hexInput.length() / cipherInHex.length());
+        return CryptoLib.fixedXOR(hexInput, repeatedCipher);
+    }
+
+    /**
+     * Applies the repeating key xor operation to the input string {@code input} by repeating the string {@code key}
+     * such that the length of the repeating key matches that of {@code input}.
+     * @param input the input
+     * @param key the key to repeat
+     * @return the result, hex encoded
+     */
+    public static String repeatingKeyXor(@NotNull String input, @NotNull String key) {
+        final byte[] inputInBytes = input.getBytes();
+
+        String repeatedKey = key.repeat(input.length() / key.length());
+        final int lengthDiff = input.length() - repeatedKey.length();
+        if (lengthDiff != 0) {
+            repeatedKey += key.substring(0, lengthDiff);
+        }
+        final byte[] repeatedKeyInBytes = repeatedKey.getBytes();
+
+        final byte[] xorResult = fixedXOR(repeatedKeyInBytes, inputInBytes);
+        return decodeToHexString(xorResult);
     }
 
     /**
      * Counts the number of alphabets in {@code input}.
+     *
      * @param input the input string
      * @return the number of alphabets
      */
@@ -97,6 +128,18 @@ public class CryptoLib {
             count += Character.isAlphabetic(currentChar) ? 1 : 0;
         }
         return count;
+    }
+
+    public static String decodeToHexString(byte[] byteArray) {
+        final StringBuilder stringBuilder = new StringBuilder();
+        for (int i = 0; i < byteArray.length; i++) {
+            final byte currByte = byteArray[i];
+            final int firstDigit = (currByte & 0xF0) >> 4;
+            final int secondDigit = currByte & 0x0F;
+            stringBuilder.append(Character.forDigit(firstDigit, 16))
+                    .append(Character.forDigit(secondDigit, 16));
+        }
+        return stringBuilder.toString();
     }
 
     public static byte[] decodeHexString(String hexString) {

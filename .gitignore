@@ -1,9 +1,10 @@
-java/.idea/workspace.xml# User-specific stuff
-.idea/**/workspace.xml
-.idea/**/tasks.xml
-.idea/**/usage.statistics.xml
-.idea/**/dictionaries
-.idea/**/shelf
+# User-specific stuff
+java/.idea/workspace.xml
+java/.idea/**/workspace.xml
+java/.idea/**/tasks.xml
+java/.idea/**/usage.statistics.xml
+java/.idea/**/dictionaries
+java/.idea/**/shelf
 
 .DS_Store
 

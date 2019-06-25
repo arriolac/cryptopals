@@ -15,7 +15,7 @@ public class Set1 {
             for (int i = 0; i < lines.size(); i++) {
                 final String line = lines.get(i);
                 final char cipher = CryptoLib.findSingleByteXorCipher(line);
-                final String resultXor = CryptoLib.applySingleByteXorCipher(line, cipher);
+                final String resultXor = CryptoLib.repeatingKeyXor(line, cipher);
                 final byte[] resultBytes = CryptoLib.decodeHexString(resultXor);
                 final String result = new String(resultBytes);
                 final int charCount = CryptoLib.countAlpha(result);
