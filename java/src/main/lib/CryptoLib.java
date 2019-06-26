@@ -103,7 +103,6 @@ public class CryptoLib {
         return Hex.encode(xorResult);
     }
 
-
     /**
      * Applies the repeating key xor operation to the byte array {@code input} using the cipher {@code cipher}.
      *
