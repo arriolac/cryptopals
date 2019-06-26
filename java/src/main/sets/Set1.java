@@ -6,9 +6,16 @@ import main.lib.Hex;
 import main.lib.Strings;
 import org.jetbrains.annotations.NotNull;
 
+import javax.crypto.Cipher;
+import javax.crypto.NoSuchPaddingException;
+import javax.crypto.SecretKey;
+import javax.crypto.spec.SecretKeySpec;
+import javax.swing.text.html.Option;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.security.InvalidKeyException;
+import java.security.NoSuchAlgorithmException;
 import java.util.*;
 import java.util.function.BinaryOperator;
 import java.util.function.Consumer;
@@ -93,6 +100,26 @@ public class Set1 {
                     System.out.println(new String(Hex.decode(hex)));
                 });
             }
+        }
+    }
+
+    public static void runProblem7() {
+        try {
+            // Initialize Cipher object
+            final SecretKey key = new SecretKeySpec("YELLOW SUBMARINE".getBytes(), "AES");
+            final Cipher cipher = Cipher.getInstance("AES/ECB/NOPADDING");
+            cipher.init(Cipher.DECRYPT_MODE, key);
+
+            // Read lines from file
+            final Path path = Path.of("src/main/sets/test_files/set1_problem7_input.txt");
+            final Optional<String> encryptedMessage = Files.readAllLines(path).stream().reduce((s1, s2)-> s1 + s2);
+            if (encryptedMessage.isPresent()) {
+                final byte[] target = Base64.getDecoder().decode(encryptedMessage.get());
+                final byte[] decrypted = cipher.doFinal(target);
+                System.out.println(new String(decrypted));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
