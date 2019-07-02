@@ -6,6 +6,6 @@ public class Main {
 
     public static void main(String[] args) {
         //Set1.runProblem6();
-        Set1.runProblem7();
+        Set1.runProblem8();
     }
 }

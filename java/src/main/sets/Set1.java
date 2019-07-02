@@ -12,6 +12,7 @@ import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
 import javax.swing.text.html.Option;
 import java.io.IOException;
+import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.security.InvalidKeyException;
@@ -95,7 +96,7 @@ public class Set1 {
                 final Optional<String> combinedLines = lines.stream().reduce((s, s2) -> s + s2);
                 combinedLines.ifPresent(s -> {
                     final byte[] decodedLine = Base64.getDecoder().decode(s);
-                    final String lineDefaultCharSet = new String(decodedLine);
+                    final String lineDefaultCharSet = new String(decodedLine, Charset.forName("US-ASCII"));
                     final String hex = CryptoLib.repeatingKeyXor(lineDefaultCharSet, key);
                     System.out.println(new String(Hex.decode(hex)));
                 });
@@ -117,6 +118,22 @@ public class Set1 {
                 final byte[] target = Base64.getDecoder().decode(encryptedMessage.get());
                 final byte[] decrypted = cipher.doFinal(target);
                 System.out.println(new String(decrypted));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void runProblem8() {
+        try {
+            // Read lines from file
+            final Path path = Path.of("src/main/sets/test_files/set1_problem8_input.txt");
+            final List<String> lines = Files.readAllLines(path);
+            int i = 0;
+            for (String line : lines) {
+                if (CryptoLib.isAesEcbModeEncrypted(line)) {
+                    System.out.println(String.format("Line %d is AES ECM mode encrypted.", ++i));
+                }
             }
         } catch (Exception e) {
             e.printStackTrace();

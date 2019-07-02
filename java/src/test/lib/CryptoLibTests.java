@@ -1,9 +1,15 @@
 package test.lib;
 
 import main.lib.CryptoLib;
+import main.lib.Hex;
 import org.junit.Test;
 
+import javax.crypto.Cipher;
+import javax.crypto.SecretKey;
+import javax.crypto.spec.SecretKeySpec;
+
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class CryptoLibTests {
 
@@ -37,5 +43,22 @@ public class CryptoLibTests {
                "0b3637272a2b2e63622c2e69692a23693a2a3c6324202d623d63343c2a26226324272765272a282b2f20430a652e2c652a3124333a653e2b2027630c692b20283165286326302e27282f",
                CryptoLib.repeatingKeyXor(input, key)
        );
+    }
+
+    // Problem # 8
+    @Test
+    public void testIsAesEcbEncrypted() {
+        final String plaintextString = "yellow submarine some other str yellow submarine";
+        final SecretKey key = new SecretKeySpec("MY NAME IS CHRIS".getBytes(), "AES");
+        final Cipher cipher;
+        try {
+            cipher = Cipher.getInstance("AES/ECB/NOPADDING");
+            cipher.init(Cipher.ENCRYPT_MODE, key);
+            final byte[] encryptedBytes = cipher.doFinal(plaintextString.getBytes());
+            final String encryptedHexString = Hex.encode(encryptedBytes);
+            assertTrue(CryptoLib.isAesEcbModeEncrypted(encryptedHexString));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
