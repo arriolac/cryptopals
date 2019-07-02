@@ -1,9 +1,6 @@
 package main.sets;
 
-import main.lib.Bytes;
-import main.lib.CryptoLib;
-import main.lib.Hex;
-import main.lib.Strings;
+import main.lib.*;
 import org.jetbrains.annotations.NotNull;
 
 import javax.crypto.Cipher;
@@ -106,18 +103,12 @@ public class Set1 {
 
     public static void runProblem7() {
         try {
-            // Initialize Cipher object
-            final SecretKey key = new SecretKeySpec("YELLOW SUBMARINE".getBytes(), "AES");
-            final Cipher cipher = Cipher.getInstance("AES/ECB/NOPADDING");
-            cipher.init(Cipher.DECRYPT_MODE, key);
-
             // Read lines from file
             final Path path = Path.of("src/main/sets/test_files/set1_problem7_input.txt");
-            final Optional<String> encryptedMessage = Files.readAllLines(path).stream().reduce((s1, s2)-> s1 + s2);
+            final Optional<String> encryptedMessage = Files.readAllLines(path).stream().reduce((s1, s2) -> s1 + s2);
             if (encryptedMessage.isPresent()) {
-                final byte[] target = Base64.getDecoder().decode(encryptedMessage.get());
-                final byte[] decrypted = cipher.doFinal(target);
-                System.out.println(new String(decrypted));
+                final String decrypted = AES.ecbDecrypt(encryptedMessage.get(), "YELLOW SUBMARINE");
+                System.out.println(decrypted);
             }
         } catch (Exception e) {
             e.printStackTrace();

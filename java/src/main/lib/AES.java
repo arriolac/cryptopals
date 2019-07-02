@@ -10,6 +10,23 @@ import java.util.stream.IntStream;
 public class AES {
 
     /**
+     * Performs AES decryption using the Electronic Codebook (ECB) mode.
+     *
+     * @param cipherText the text to decipher in base 64
+     * @param key        the AES key
+     * @return the decrypted text
+     */
+    public static String ecbDecrypt(String cipherText, String key) throws NoSuchPaddingException, NoSuchAlgorithmException, InvalidKeyException, BadPaddingException, IllegalBlockSizeException {
+        final SecretKey secretKey = new SecretKeySpec(key.getBytes(), "AES");
+        final Cipher cipher = Cipher.getInstance("AES/ECB/NOPADDING");
+        cipher.init(Cipher.DECRYPT_MODE, secretKey);
+
+        final byte[] target = Base64.getDecoder().decode(cipherText);
+        final byte[] decrypted = cipher.doFinal(target);
+        return new String(decrypted);
+    }
+
+    /**
      * Performs AES decryption using the Cipher Block Chaining (CBC) mode.
      *
      * @param cipherText           the text to decipher in base 64
