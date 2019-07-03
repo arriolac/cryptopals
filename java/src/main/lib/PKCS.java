@@ -9,6 +9,7 @@ public class PKCS {
             return input;
         }
 
+        System.out.println("Applying padding size: " + paddingSize);
         final char[] padding = new char[paddingSize];
         IntStream.range(0, paddingSize).forEach(i -> padding[i] = (char) paddingSize);
         return input + new String(padding);

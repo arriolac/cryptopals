@@ -3,20 +3,11 @@ package main.sets;
 import main.lib.*;
 import org.jetbrains.annotations.NotNull;
 
-import javax.crypto.Cipher;
-import javax.crypto.NoSuchPaddingException;
-import javax.crypto.SecretKey;
-import javax.crypto.spec.SecretKeySpec;
-import javax.swing.text.html.Option;
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.security.InvalidKeyException;
-import java.security.NoSuchAlgorithmException;
 import java.util.*;
-import java.util.function.BinaryOperator;
-import java.util.function.Consumer;
 import java.util.stream.IntStream;
 
 public class Set1 {
@@ -122,8 +113,9 @@ public class Set1 {
             final List<String> lines = Files.readAllLines(path);
             int i = 0;
             for (String line : lines) {
-                if (CryptoLib.isAesEcbModeEncrypted(line)) {
-                    System.out.println(String.format("Line %d is AES ECM mode encrypted.", ++i));
+                ++i;
+                if (AES.isEcbModeEncrypted(line)) {
+                    System.out.println(String.format("Line %d is AES ECB mode encrypted.", i));
                 }
             }
         } catch (Exception e) {

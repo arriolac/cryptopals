@@ -1,9 +1,11 @@
 package main.sets;
 
 import main.lib.AES;
+import main.lib.Hex;
 
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.Base64;
 import java.util.Optional;
 
 public class Set2 {
@@ -16,9 +18,21 @@ public class Set2 {
             if (encryptedText.isPresent()) {
                 final String key = "YELLOW SUBMARINE";
                 final String iv = "\u0000".repeat(key.length());
-                final String decryptedText = AES.cbcDecrypt(encryptedText.get(), key, iv);
+                final byte[] blob = Base64.getDecoder().decode(encryptedText.get());
+                final String decryptedText = AES.cbcDecrypt(blob, key, iv);
                 System.out.println(decryptedText);
             }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void runProblem11() {
+        try {
+            final String plaintextString = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+            final String encrypted = AES.encryptionOracle(plaintextString);
+            final boolean isECB = AES.isEcbModeEncrypted(Hex.encode(encrypted.getBytes()));
+            System.out.println("Detected mode: " + (isECB ? "ECB" : "CBC"));
         } catch (Exception e) {
             e.printStackTrace();
         }

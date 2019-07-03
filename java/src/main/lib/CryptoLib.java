@@ -3,9 +3,6 @@ package main.lib;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.nio.charset.Charset;
-import java.util.HashSet;
-import java.util.Set;
 import java.util.stream.IntStream;
 
 public class CryptoLib {
@@ -118,27 +115,5 @@ public class CryptoLib {
         final byte[] repeatedCipher = new byte[input.length];
         IntStream.range(0, input.length).forEach(i -> repeatedCipher[i] = cipher);
         return fixedXOR(input, repeatedCipher);
-    }
-
-    /**
-     * Returns whether or not the provided hex string is AES ECB mode encrypted. This method uses the fact that the
-     * same 16 byte plain text will result in the same 16 byte ciphertext using AES in ECB mode.
-     *
-     * @param hexString the hex string
-     * @return true if the provided hex string is AES ECB mode encrypted, false, otherwise
-     */
-    public static boolean isAesEcbModeEncrypted(String hexString) {
-        final byte[] bytes = Hex.decode(hexString);
-        final String string = new String(bytes, Charset.forName("US-ASCII"));
-        final Set<String> seenStrings = new HashSet<>();
-        for (int i = 0; i <= string.length() - 16; i += 16) {
-            final int endIndex = (i + 16 <= string.length()) ? i + 16 : string.length();
-            final String currentString = string.substring(i, endIndex);
-            if (seenStrings.contains(currentString)) {
-                return true;
-            }
-            seenStrings.add(currentString);
-        }
-        return false;
     }
 }
